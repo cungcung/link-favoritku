@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Link Favorit Tiga Kolom</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 999;
+    }body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ccc;
+    }
+
+    h1 {
+      margin: 15px 0 5px;
+      font-size: 26px;
+    }
+
+    p.bio {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .category {
+      text-align: left;
+      margin-bottom: 35px;
+    }
+
+    .category h2 {
+      font-size: 18px;
+      color: #444;
+      border-bottom: 2px solid #e2e2e2;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: flex-start;
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: 0.2s ease;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .link-item:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.02);
+    }
+
+    .link-item i {
+      margin-right: 12px;
+      font-size: 18px;
+      color: #1a73e8;
+      min-width: 24px;
+      text-align: center;
+    }
+
+    .link-item .text {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+
+    .link-item .description {
+      font-size: 12px;
+      color: #666;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    .toggle-button {
+      margin-bottom: 15px;
+      background-color: #1a73e8;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .category.adult-category {
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #aaa;
+    }
+    @media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+    }
+    .column {
+      max-width: 100%;
+    }
+  }
+
+  .dark-mode body {
+    background-color: #111;
+    color: #eee;
+  }
+
+  .dark-mode .link-item {
+    background-color: #222;
+    color: #eee;
+  }
+
+  .dark-mode .link-item i {
+    color: #90cdf4;
+  }
+
+  .dark-mode .link-item .description {
+    color: #bbb;
+  }
+
+</style>
+  <script>
+    function toggleAdult() {
+      const password = prompt("Masukkan PIN untuk menampilkan konten dewasa:");
+      if (password === "6969") {
+        const section = document.querySelector('.adult-category');
+        section.style.display = section.style.display === 'none' ? 'block' : 'none';
+      } else if (password !== null) {
+        alert("PIN salah atau akses ditolak.");
+      }
+    }
+  </script>
+<script>
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle("dark-mode");
+  }
+</script>
+</head>
+<body>
+  <div class="container">
+    <button class="toggle-button dark-mode-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+        <h1>Link Favoritku</h1>
+    <p class="bio"><i>Kumpulan link website yang berguna untuk keseharianku.</i></p>
+
+    <div class="grid">
+      <div class="column">
+  <div class="category">
+    <h2>📱 Social Media</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <div class="text">
+          Instagram
+          <span class="description">Lihat profil dan aktivitas saya di Instagram</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://wa.me/6281234567890" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="text">
+          WhatsApp
+          <span class="description">Kirim pesan langsung via WhatsApp</span>
+        </div>
+      </a>
+      <a class="link-item" href="mailto:email@example.com">
+        <i class="fas fa-envelope"></i>
+        <div class="text">
+          Email
+          <span class="description">Hubungi saya melalui email</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="category">
+    <h2>🤖 AI & Teknologi</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://chat.openai.com" target="_blank">
+        <i class="fas fa-robot"></i>
+        <div class="text">
+          ChatGPT
+          <span class="description">Asisten AI cerdas dari OpenAI</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://github.com" target="_blank">
+        <i class="fab fa-github"></i>
+        <div class="text">
+          GitHub
+          <span class="description">Repositori dan kolaborasi proyek pemrograman</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="category">
+    <h2>🎥 Hiburan</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://youtube.com" target="_blank">
+        <i class="fab fa-youtube"></i>
+        <div class="text">
+          YouTube
+          <span class="description">Tonton video favorit dan channel langganan</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://netflix.com" target="_blank">
+        <i class="fas fa-tv"></i>
+        <div class="text">
+          Netflix
+          <span class="description">Streaming film dan serial terbaru</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="category">
+    <h2>🛠️ Tools</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://canva.com" target="_blank">
+        <i class="fas fa-wrench"></i>
+        <div class="text">
+          Canva
+          <span class="description">Desain grafis mudah untuk semua kebutuhan</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://remove.bg" target="_blank">
+        <i class="fas fa-cut"></i>
+        <div class="text">
+          Remove.bg
+          <span class="description">Hapus background foto secara otomatis</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://images.google.com" target="_blank">
+        <i class="fas fa-image"></i>
+        <div class="text">
+          Google Images
+          <span class="description">Identifikasi dan cari asal gambar di internet</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://yandex.com/images" target="_blank">
+        <i class="fas fa-search"></i>
+        <div class="text">
+          Yandex Images
+          <span class="description">Identifikasi wajah dan foto orang Jepang</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://songdata.io/track/genre" target="_blank">
+        <i class="fas fa-music"></i>
+        <div class="text">
+          Music Genre Finder
+          <span class="description">Temukan genre lagu dari metadata musik</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="column">
+  <div class="category">
+    <h2>📺 Streaming Lokal TV</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://www.vidio.com" target="_blank">
+        <i class="fas fa-play-circle"></i>
+        <div class="text">
+          Vidio
+          <span class="description">Streaming TV dan olahraga Indonesia</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://www.rctiplus.com" target="_blank">
+        <i class="fas fa-tv"></i>
+        <div class="text">
+          RCTI+
+          <span class="description">Tonton acara RCTI secara online</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <button class="toggle-button" onclick="toggleAdult()">Tampilkan/Sembunyikan Link Adult</button>
+    <div class="category adult-category">
+    <h2>🔞 Adult</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://javguru.com" target="_blank">
+        <i class="fas fa-link"></i>
+        <div class="text">
+          JAVGuru
+          <span class="description">Situs katalog dan informasi bintang JAV</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://javdb.com" target="_blank">
+        <i class="fas fa-link"></i>
+        <div class="text">
+          JAVDB
+          <span class="description">Database film dewasa Jepang</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://theporndb.com" target="_blank">
+        <i class="fas fa-link"></i>
+        <div class="text">
+          ThePornDB
+          <span class="description">Basis data metadata film dewasa</span>
+        </div>
+      </a>
+      <a class="link-item" href="https://www.semprot.com" target="_blank">
+        <i class="fas fa-link"></i>
+        <div class="text">
+          Semprot
+          <span class="description">Forum komunitas dewasa Indonesia</span>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="category">
+    <h2>📦 Misc</h2>
+    <div class="link-list">
+      <a class="link-item" href="https://archive.org" target="_blank">
+        <i class="fas fa-archive"></i>
+        <div class="text">
+          Internet Archive
+          <span class="description">Koleksi digital bebas dan arsip web</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <footer>
+      &copy; 2025 Cung Cung. Semua hak dilindungi.
+    </footer>
+  </div>
